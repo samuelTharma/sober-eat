@@ -1,0 +1,77 @@
+openapi: 3.0.0
+servers:
+  - description: Order Service API
+    url: http://localhost:8080/sober-eat
+
+info:
+  description: Order Service API
+  version: 1.0.0
+  title: Sober Eat API
+  contact:
+    email: sobereat@gmail.com
+
+tags:
+  - name: admin
+    description: admin
+
+paths:
+  /order-service/create:
+    post:
+      operationId: create
+      summary: create order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '200':
+          description: successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+
+  /order-service/get:
+    get:
+      operationId: find
+      responses:
+        '200':
+          description: returns something
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+
+
+
+components:
+  schemas:
+    Order:
+      properties:
+        id:
+          type: string
+        customer:
+          $ref: '#/components/schemas/Customer'
+        menu:
+          type: array
+          items:
+            $ref: '#components/schemas/Menu'
+
+    Menu:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+
+
+    Customer:
+      properties:
+        name:
+          type: string
+        address:
+          type: string
+        phoneNumber:
+          type: string
