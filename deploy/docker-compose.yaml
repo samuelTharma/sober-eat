@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+
+  order-service:
+    restart: on-failure
+    build: ../order-service
+    image: sober-eat/order-service:1
+    ports:
+      - "8089:8089"
+
+  #
+  kitchen-service:
+    restart: on-failure
+    build: ../kitchen-service
+    image: sober-eat/kitchen-service:1
+    ports:
+      - "8182:8182"
+
+networks:
+  default:
+    external: true
+    name: deploy_sober-eat

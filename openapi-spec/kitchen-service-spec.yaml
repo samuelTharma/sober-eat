@@ -1,0 +1,77 @@
+openapi: 3.0.0
+servers:
+  - description: Kitchen Service API
+    url: http://localhost:8080/sober-eat
+
+info:
+  description: Kitchen Service API
+  version: 1.0.0
+  title: Sober Eat API
+  contact:
+    email: sobereat@gmail.com
+
+tags:
+  - name: admin
+    description: admin
+
+paths:
+  /kitchen-service/create:
+    post:
+      operationId: acceptOrder
+      summary: accept order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '200':
+          description: successfully received the order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+
+  /kitchen-service/get:
+    get:
+      operationId: find
+      responses:
+        '200':
+          description: returns something
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+
+
+
+components:
+  schemas:
+    Order:
+      properties:
+        id:
+          type: string
+        customer:
+          $ref: '#/components/schemas/Customer'
+        menu:
+          type: array
+          items:
+            $ref: '#components/schemas/Menu'
+
+    Menu:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+
+
+    Customer:
+      properties:
+        name:
+          type: string
+        address:
+          type: string
+        phoneNumber:
+          type: string

@@ -1,0 +1,16 @@
+logging:
+  level:
+    root: DEBUG
+
+server:
+  port: 8089
+
+spring:
+  application:
+    name: order-service
+
+  kafka:
+    producer:
+      bootstrap-servers: broker:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer

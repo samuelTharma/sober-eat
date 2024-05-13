@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: kitchen-service
+
+  kafka:
+    consumer:
+      bootstrap-servers:
+        - broker:29092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+server:
+  port:
+    8182
