@@ -19,15 +19,17 @@ https://stackoverflow.com/questions/65682557/kafka-docker-image-that-works-witho
 # sober-eat/ order-service
 
 to get the mock order json
-http://localhost:8080/sober-eat/order-service/get
+http://localhost:8089/sober-eat/order-service/get
 
 to create order
-http://localhost:8080/sober-eat/order-service/create
+http://localhost:8089/sober-eat/order-service/create
 
 # sober-eat/ kitchen-service
 The kitchen service would accept the order, then start preparing the meal
 once ready, it would notify the order service and delivery service
 
+- TODO
+- need to configure avro schema and define event model to pass between services
 to send the order to kitchen service/OrderConsumer via kafka
 https://piotrminkowski.com/2022/01/24/distributed-transactions-in-microservices-with-kafka-streams-and-spring-boot/
     order-received,
