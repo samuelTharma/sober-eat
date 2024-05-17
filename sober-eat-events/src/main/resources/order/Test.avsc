@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "Order",
+  "namespace": "com.sobereat.event",
+  "doc": "Order requested event",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "type": "record",
+  "name": "OrderPlaced",
+  "namespace": "com.sobereat.event",
+  "doc": "Order requested event",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "Customer",
+      "type": {
+        "name": "Customer",
+        "type": "record",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "name": "phoneNumber",
+            "type": "string"
+          }
+
+        ]
+      }
+    },
+    {
+      "name": "Menu",
+      "type": {
+        "type": "array",
+        "items": {
+          "name" : "MenuItem",
+          "type": "record",
+          "fields": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "qty",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: Schema-Registry-service
+  cloud:
+    stream:
+      kafka:
+        binder:
+          producer-properties:
+            schema:
+              registry:
+                url: http://localhost:8081
+  kafka:
+    consumer:
+      bootstrap-servers:
+        - localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+server:
+  port:
+    8182
