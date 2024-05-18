@@ -34,6 +34,7 @@ public class Producer
       {
         // Create a sample message
         String message = "Hello, Kafka!";
+
         OrderPlaced placed = new OrderPlaced();
         placed.setId("102020");
         Customer customer = new Customer();

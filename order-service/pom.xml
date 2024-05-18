@@ -20,6 +20,11 @@
 	</properties>
 	<dependencies>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webflux</artifactId>
+			<version>5.2.6.RELEASE</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -58,6 +63,7 @@
 							<configOptions>
 								<delegatePattern>true</delegatePattern>
 							</configOptions>
+							<additionalProperties>reactive=false</additionalProperties>
 						</configuration>
 					</execution>
 				</executions>

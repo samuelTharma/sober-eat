@@ -21,6 +21,7 @@
         <module>kitchen-service</module>
         <module>sober-eat-events</module>
         <module>kafka-test-console</module>
+        <module>ui-service</module>
     </modules>
     <properties>
         <swagger-annotations-version>1.5.22</swagger-annotations-version>
