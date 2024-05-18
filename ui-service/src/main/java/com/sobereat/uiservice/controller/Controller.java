@@ -2,7 +2,6 @@ package com.sobereat.uiservice.controller;
 
 import java.time.Duration;
 import java.util.stream.Stream;
-import javax.servlet.http.HttpServletRequest;
 
 import com.sobereat.event.OrderPlaced;
 import com.sobereat.uiservice.model.MenuItemStatus;
@@ -26,14 +25,17 @@ public class Controller
   @GetMapping(value = "/get", name = "get", produces = { "application/json" })
   public Mono<OrderPlaced> getOrder()
   {
+    logger.debug("getOrder ... 1");
     OrderPlaced orderPlaced = new OrderPlaced();
     orderPlaced.setId("3232");
+    logger.debug("getOrder ... 2");
     return Mono.just(orderPlaced);
   }
 
   @GetMapping("order-status/{orderId}")
   public Flux<MenuItemStatus> getOrderStatus(@PathVariable("orderId") String orderId)
   {
+    logger.debug("inside order status");
     return Flux
       .fromStream(this::prepareStream)
       .delayElements(Duration.ofMillis(500))
@@ -51,7 +53,7 @@ public class Controller
   }
 
   @PostMapping("place-order")
-  public Mono<OrderPlaced> placeOrder(@RequestBody OrderPlaced orderPlaced, HttpServletRequest request)
+  public Mono<OrderPlaced> placeOrder(@RequestBody OrderPlaced orderPlaced)
   {
     return Mono.just(orderPlaced);
   }
