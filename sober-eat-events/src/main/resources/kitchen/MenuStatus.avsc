@@ -1,0 +1,6 @@
+{
+  "type" : "enum",
+  "name" : "ApplicationCode",
+  "namespace" : "com.example",
+  "symbols" : [ "APP_A", "APP_B" ]
+}

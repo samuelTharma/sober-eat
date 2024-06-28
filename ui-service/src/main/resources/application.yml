@@ -1,3 +1,4 @@
+
 logging:
   level:
     root: DEBUG
@@ -8,3 +9,7 @@ server:
 spring:
   application:
     name: ui-service
+  main:
+    web-application-type: reactive
+  thymeleaf:
+    mode: HTML

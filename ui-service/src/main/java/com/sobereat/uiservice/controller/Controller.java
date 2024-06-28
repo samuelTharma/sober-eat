@@ -51,7 +51,7 @@ public class Controller
   }
 
   @PostMapping("place-order")
-  public Mono<OrderPlaced> placeOrder(@RequestBody OrderPlaced orderPlaced, HttpServletRequest request)
+  public Mono<OrderPlaced> placeOrder(@RequestBody OrderPlaced orderPlaced)
   {
     return Mono.just(orderPlaced);
   }

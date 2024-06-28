@@ -50,7 +50,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.parent.basedir}/openapi-spec/kitchen-service-spec.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/spec/kitchen-service-spec.yaml</inputSpec>
 							<generatorName>spring</generatorName>
 							<apiPackage>com.sobereat.kitchenservice.rest.api</apiPackage>
 							<modelPackage>com.sobereat.kitchenservice.rest.model</modelPackage>
