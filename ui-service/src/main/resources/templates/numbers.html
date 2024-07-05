@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Numbers</title>
+</head>
+<body>
+<h1>Numbers2:</h1>
+<ul id="numberList"></ul>
+
+<script>
+
+    const endpoint = "http://localhost:8088/sobereat/numbers/stream"; // Thymeleaf will replace this with the endpoint URL
+    let eventSource = new EventSource(endpoint);
+    eventSource.onmessage = function(event) {
+        let numberList = document.getElementById('numberList');
+        let newNumber = document.createElement('li');
+        newNumber.textContent = event.data;
+        numberList.appendChild(newNumber);
+
+         const texarea = document.getElementById('desc');
+         texarea.innerText = event.data;
+    };
+
+</script>
+<form th:action="@{/sobereat/numbers}" th:object="${user}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" /><br><br>
+    <input type="textarea" id="desc" th:field="*{name}" /><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" th:field="*{email}" /><br><br>
+    <button type="submit">order</button>
+</form>
+</body>
+</html>

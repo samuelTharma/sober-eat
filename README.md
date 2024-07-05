@@ -6,10 +6,10 @@ mongoDB
 kafka
 
 kafka and mongoDB 
-1. run the following to start the kafka and mongoDB in detached mode]
+1. run the following to start the kafka and mongoDB in detached mode
 - docker-compose -f docker-compose-env.yaml up -d
-create a topic called kitchen-orders in localhost:9999
-https://stackoverflow.com/questions/65682557/kafka-docker-image-that-works-without-zookeeper
+- create a topic called 'kitchen-orders' in http://localhost:9999
+
 
 2. after clean build the project using mvn clean install
  - docker-compose up to start the services in docker
@@ -40,3 +40,6 @@ https://piotrminkowski.com/2022/01/24/distributed-transactions-in-microservices-
     order-packed
 
     package send to delivery service
+
+
+https://stackoverflow.com/questions/65682557/kafka-docker-image-that-works-without-zookeeper

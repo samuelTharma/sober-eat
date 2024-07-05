@@ -1,0 +1,15 @@
+
+logging:
+  level:
+    root: DEBUG
+
+server:
+  port: 8088
+
+spring:
+  application:
+    name: ui-service
+  main:
+    web-application-type: reactive
+  thymeleaf:
+    mode: HTML

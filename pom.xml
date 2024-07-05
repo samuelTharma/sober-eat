@@ -19,6 +19,9 @@
     <modules>
         <module>order-service</module>
         <module>kitchen-service</module>
+        <module>sober-eat-events</module>
+        <module>kafka-test-console</module>
+        <module>ui-service</module>
     </modules>
     <properties>
         <swagger-annotations-version>1.5.22</swagger-annotations-version>
@@ -28,6 +31,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1.1</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

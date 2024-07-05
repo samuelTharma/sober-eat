@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: Schema-Registry-service
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          producer-properties:
+            schema:
+              registry:
+                url: http://kafka-schema-registry:8081
+server:
+  port:
+    8989

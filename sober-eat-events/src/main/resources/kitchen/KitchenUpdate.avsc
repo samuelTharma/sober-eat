@@ -1,0 +1,44 @@
+{
+  "type": "record",
+  "name": "Order",
+  "namespace": "com.sobereat.event",
+  "doc": "Kitchen Order event",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "string"
+    },
+    {
+      "name": "Menu",
+      "type": {
+        "type": "array",
+        "items": {
+          "name" : "MenuItem",
+          "type": "record",
+          "fields": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "qty",
+              "type": "string"
+            },
+            {
+              "name": "status",
+              "type": {
+                "type": "enum",
+                "name": "Status",
+                "symbols": ["PENDING", "PROCESSING", "SHIPPED", "DELIVERED", "CANCELLED"]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
