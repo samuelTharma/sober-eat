@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sobereat</groupId>
-    <artifactId>sober-eat</artifactId>
+    <artifactId>spring-boot-microservices-eda-example</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
@@ -19,8 +19,7 @@
     <modules>
         <module>order-service</module>
         <module>kitchen-service</module>
-        <module>sober-eat-events</module>
-        <module>kafka-test-console</module>
+        <module>project-events</module>
         <module>ui-service</module>
     </modules>
     <properties>

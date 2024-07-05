@@ -5,7 +5,7 @@
 
 	<parent>
 		<groupId>com.sobereat</groupId>
-		<artifactId>sober-eat</artifactId>
+		<artifactId>spring-boot-microservices-eda-example</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
