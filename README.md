@@ -1,4 +1,4 @@
-# sober-eat 
+# microservices with eda
 build & run with 
 maven
 java 17
